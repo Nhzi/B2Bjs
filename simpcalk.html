@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .main {
+            align-content: center;
+            border-left: 22%;
+            border-right: 22%;
+        }
+
+        .clr {
+            background-color: red;
+            border: none;
+            color: whitesmoke;
+        }
+
+        .eq {
+            background-color: black;
+            border: none;
+            color: whitesmoke;
+        }
+
+        .nom {
+            background-color: rgb(229, 255, 0);
+            border: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .oper {
+            background-color: rgb(80, 41, 189);
+            border: none;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <button class="nom"    onclick="ans =1">1</button>
+        <button class="nom"    onclick="ans =2">2</button>
+        <button class="nom"    onclick="ans =3">3</button>
+        <button class="oper">+</button>
+        <button class="eq"    onclick="alert(ans)">=</button>
+        <button class="clr"    onclick="ans = 0">Clc</button>
+    </div>
+
+    <script>
+        let ans = 0
+        console.log('Calculator started initially with ans = 0')
+            // main code for the calculation
+        const index = ''
+        console.log(index)
+
+        // console.log(`The sum of ${} and ${} is ${}`)
+    </script>
+</body>
+</html>
