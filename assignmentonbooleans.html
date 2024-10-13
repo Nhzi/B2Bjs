@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>playboi KARTi</title>
+  </head>
+  <body>
+    <div>
+      <p>Welcome to your cart</p>
+
+      <button onclick="addItem()">Add item to cart</button>
+      <button onclick="removeItem()">Remove item from cart</button>
+      <button onclick="showItems()">My Items</button>
+    </div>
+
+    <script>
+      let cartQuantity = 0;
+
+      function addItem() {
+        cartQuantity = cartQuantity + 1;
+
+        console.log(`Added to cart`)
+
+        if (cartQuantity >= 5) {
+          alert("Cart is Full!");
+          cartQuantity = 5;
+          console.log(`You have ${cartQuantity} items in your cart`);
+          // Optional: If you don't want to exceed 5 items
+        }
+      }
+
+      function removeItem() {
+        if (cartQuantity > 0) {
+          cartQuantity = 0;
+        }
+
+        console.log(`Removed from cart`)
+
+        if (cartQuantity === 0) {
+          alert("Cart is Empty");
+          console.log(`You have ${cartQuantity} items in your cart`);
+        }
+      }
+
+      function showItems() {
+        console.log(`You have ${cartQuantity} items in your cart`);
+      }
+    </script>
+  </body>
+</html>
