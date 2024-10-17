@@ -6,7 +6,7 @@
     <title>Guess What Time</title>
     <style>
       .txt {
-        color: green;
+        color: tomato;
       }
     </style>
   </head>
@@ -17,10 +17,16 @@
     </p>
     <div>
       <button onclick="chktym()">Check Time</button>
-      <button>Klik me</button>
+      <button onclick="gr8()">Klik me</button>
     </div>
     <script>
       const hour = 23;
+
+      function gr8() {
+        console.log(`${hour} is the time set.`);
+        alert(`Check the console.`);
+        return;
+      }
 
       function chktym() {
         console.log(hour);
@@ -34,6 +40,7 @@
         } else {
           alert('Invalid hour')
         }
+        return console. log(`Event Ended \n Valid Time can be gotten through states.`);
       }
     </script>
   </body>
