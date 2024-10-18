@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rok, Paypa, Cisors but with Records.</title>
+
+    <style>
+      .btn {
+        color: white;
+        background-color: rgb(255, 0, 128);
+        border: none;
+        width: fit-content;
+        height: fit-content;
+      }
+
+      .dtext {
+        font-size: medium;
+        font-family: Arial, Helvetica, sans-serif;
+        color: azure;
+      }
+
+      .body {
+        background-color: rgb(85, 85, 85);
+      }
+    </style>
+  </head>
+  <body class="body">
+    <div class="main">
+      <h3
+        class="dtext"
+      >
+        Start The Game
+      </h3>
+
+      <p>
+        <button
+          class="btn"
+          onclick="rndm();
+
+                  if (rndm === 'Rock') {
+                    alert(`The computer chose ${rndm}, It is a Tie`)
+                  }
+                  else if (rndm === 'Paper') {
+                    alert(`The computer chose ${rndm}, Uh Oh, You Lose`)
+                  }
+                  else if (rndm === 'Scissors') {
+                    alert(`The computer chose ${rndm}, You Win`)
+                  }"
+        >
+          Rok
+        </button>
+        <button
+          class="btn"
+          onclick="rndm();
+
+                  if (rndm === 'Rock') {
+                    alert(`The computer chose ${rndm}, You Win`)
+                  }
+                  else if (rndm === 'Paper') {
+                    alert(`The computer chose ${rndm}, It is a Tie`)
+                  }
+                  else if (rndm === 'Scissors') {
+                    alert(`The computer chose ${rndm}, Uh Oh, You Lose`)
+                  }
+                  "
+        >
+          Paypa
+        </button>
+        <button
+          class="btn"
+          onclick=" rndm();
+
+                  if (rndm === 'Scissors') {
+                    alert(`The computer chose ${rndm}, It is a Tie`)
+                  } if (rndm === 'Rock') {
+                    alert(`The computer chose ${rndm}, Uh Oh, You Lose`)
+                  }
+                  else if (rndm === 'Paper') {
+                    alert(`The computer chose ${rndm}, You Win`)
+                  }"
+        >
+          Cisors
+        </button>
+        <br />
+      </p>
+    </div>
+
+    <button class="evil" onclick="klik()">Enable Cheats!</button>
+
+    <button class="evil" onclick="klikw()">Disable Cheats!</button>
+    <script>
+      function rndm() {
+        let rndm = Math.random();
+
+        if (rndm >= 1 / 3 && rndm < 2 / 3) {
+          rndm = "Paper";
+        } else if (rndm >= 2 / 3 && rndm < 1) {
+          rndm = "Scissors";
+        } else if (rndm >= 0 && rndm < 1 / 3) {
+          rndm = "Rock";
+        }
+      }
+
+      function klik() {
+        alert(`🎅 Ho ho ho ho, You are gay now!`);
+        console.log(`Cheats enabled.`);
+        return true;
+      }
+
+      function klikw() {
+        alert(`🎅 Oh Oh, You have been exorcised!`);
+        console.log(`Cheats disabled.`);
+        return;
+      }
+    </script>
+  </body>
+</html>
