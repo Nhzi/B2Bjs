@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrenheitein</title>
+  </head>
+
+  <body>
+    <script>
+      function op() {
+        console.log("Fahrenheitein Subdued");
+      }
+
+      function convert(celsius = -273) {
+        const fahrenkun = (celsius * 9) / 5 + 32;
+        console.log(fahrenkun);
+      }
+
+      convert();
+      convert(0);
+      convert(100);
+      convert(27);
+      convert(35);
+
+      op();
+
+      function unconvert(fahrenkun = -460) {
+        const celsius = (fahrenkun - 32) * (5 / 9);
+        console.log(celsius);
+      }
+
+      unconvert(-459.4);
+      unconvert(32);
+      unconvert(212);
+      unconvert(80.8);
+      unconvert(95);
+      unconvert(195);
+
+      op();
+
+      console.log("The Fahrenheiten Problem");
+
+      //   function idk() {
+      //     let amp = 4;
+      //     return amp;
+      //   }
+
+      //   let ampI = idk()
+      //   idk();
+
+      function tempUnit(deg = "0", unit = "C") {
+        console.log("Temperature Parameter: " + (deg + unit));
+        if (unit == "F") {
+          const celsius = (deg - 32) * (5 / 9);
+          console.log(celsius + "C");
+        } else if (unit == "C") {
+          const fahrenkun = (deg * 9) / 5 + 32;
+          console.log(fahrenkun + "F");
+        }
+      }
+
+      tempUnit();
+      tempUnit(2, "F");
+      tempUnit(2 , 'C')
+      tempUnit(1000 , 'C')
+    </script>
+  </body>
+</html>
