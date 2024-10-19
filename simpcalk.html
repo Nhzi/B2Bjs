@@ -1,61 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>Simple Calculator Game</title>
     <style>
-      .main {
-        align-content: center;
-        border-left: 22%;
-        border-right: 22%;
-      }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
 
-      .clr {
-        background-color: red;
-        border: none;
-        color: whitesmoke;
-      }
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
 
-      .eq {
-        background-color: black;
-        border: none;
-        color: whitesmoke;
-      }
+        #display {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-      .nom {
-        background-color: rgb(229, 255, 0);
-        border: none;
-        color: rgb(0, 0, 0);
-      }
+        .btn {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
 
-      .oper {
-        background-color: rgb(80, 41, 189);
-        border: none;
-        color: rgb(255, 255, 255);
-      }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-1 { background-color: #ff5733; color: white; }
+        .btn-2 { background-color: #33c1ff; color: white; }
+        .btn-3 { background-color: #33ff57; color: white; }
+        .btn-4 { background-color: #ff33a6; color: white; }
+        .btn-5 { background-color: #ffcc33; color: black; }
+        .btn-6 { background-color: #33ffcc; color: black; }
+        .btn-7 { background-color: #cc33ff; color: white; }
+        .btn-8 { background-color: #ff9933; color: black; }
+        .btn-9 { background-color: #9933ff; color: white; }
+        .btn-0 { background-color: #33ff99; color: black; }
+        .btn-equal { background-color: #ffcc00; color: black; }
+        .btn-clear { background-color: #ff3333; color: white; }
     </style>
-  </head>
-  <body>
-    <div class="main">
-      <button class="nom" onclick="ansO =1; console.log(ansO)">1</button>
-      <button class="nom" onclick="ansT =2; console.log(ansT)">2</button>
-      <button class="nom" onclick="ansTh =3; console.log(ansTh)">3</button>
-      <button class="oper">+</button>
-      <button class="eq" onclick="alert(ans)">=</button>
-      <button class="clr" onclick="ans = 0; console.log(ans)">Clc</button>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled />
+        <div>
+            <button class="btn btn-1" onclick="appendToDisplay('1')">1</button>
+            <button class="btn btn-1" onclick="appendToDisplay('2')">2</button>
+            <button class="btn btn-1" onclick="appendToDisplay('3')">3</button>
+            <button class="btn btn-4" onclick="appendToDisplay('+')">+</button>
+        </div>
+        <div>
+            <button class="btn btn-2" onclick="appendToDisplay('4')">4</button>
+            <button class="btn btn-2" onclick="appendToDisplay('5')">5</button>
+            <button class="btn btn-2" onclick="appendToDisplay('6')">6</button>
+            <button class="btn btn-4" onclick="appendToDisplay('-')">-</button>
+        </div>
+        <div>
+            <button class="btn btn-3" onclick="appendToDisplay('7')">7</button>
+            <button class="btn btn-3" onclick="appendToDisplay('8')">8</button>
+            <button class="btn btn-3" onclick="appendToDisplay('9')">9</button>
+            <button class="btn btn-4" onclick="appendToDisplay('*')">*</button>
+        </div>
+        <div>
+            <button class="btn btn-0" onclick="appendToDisplay('0')">0</button>
+            <button class="btn btn-equal" onclick="calculateResult()">=</button>
+            <button class="btn btn-clear" onclick="clearDisplay()">C</button>
+            <button class="btn btn-4" onclick="appendToDisplay('/')">/</button>
+        </div>
     </div>
 
     <script>
-      let ans = 0;
-      console.log("Calculator started initially with ans = 0");
+        function appendToDisplay(value) {
+            const display = document.getElementById('display');
+            display.value += value;
+        }
 
-      // main code for the calculation
-      const index = "";
-      console.log(index);
+        function calculateResult() {
+            const display = document.getElementById('display');
+            try {
+                display.value = eval(display.value) || '';
+            } catch {
+                display.value = 'Error';
+            }
+        }
 
-      // console.log(`The sum of ${ansTh} and ${ansT} is ${}`)
-      //   enter eval()
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
     </script>
-  </body>
+</body>
 </html>
