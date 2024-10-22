@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Basketball exercise.</title>
+  </head>
+  <body>
+    <script>
+      //   const datstring = JSON.parse(localStorage.getItem("data"));
+      //   console.log(datstring);
+      //   const main = {
+      //     firstName: "Chinaza",
+      //     lastName: "Okeke",
+      //     faceStructure: {
+      //       typeofObj: "Nested",
+      //       CoB: "bony",
+      //       alignment: "",
+      //       handsome: true,
+      //     },
+      //     run: function run() {
+      //       console.log(main.firstName);
+      //       console.log(main["lastName"]);
+      //       console.log(main);
+      //     },
+      //   };
+
+      //   const details = JSON.stringify(main);
+      //   localStorage.setItem("data", details);
+
+      const productX = {
+        name: "basketball",
+        priceInCents: 95,
+      };
+
+      const productZ = {
+        name: "basketball",
+        priceInCents: 205,
+      };
+
+    
+
+      function comp(Z, X) {
+        let final = "";
+        if (Z > X) {
+          return X;
+        } else if (Z < X) {
+          return Z;
+        }
+        // return final;
+      }
+
+      comp(productZ.priceInCents, productX.priceInCents);
+
+      const checker = comp(productZ.priceInCents, productX.priceInCents);
+
+      console.log(`item of $${checker/100} is cheaper than the other, `);
+      // console.log(productZ.priceInCents);
+    </script>
+  </body>
+</html>
