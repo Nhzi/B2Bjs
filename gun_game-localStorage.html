@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gun Game</title>
+  </head>
+  <body>
+    <button onclick="shoot()">Pew Pew</button>
+    <button onclick="reload()">Reload</button>
+
+    <script>
+      let gunEff = {
+        name: "fennec",
+        rounds: 35,
+        shot: 0,
+        remainder: 35,
+      };
+
+      console.log(gunEff);
+
+      // Shoot function
+      function shoot() {
+        if (gunEff.remainder > 0) {
+          gunEff.shot += 1;
+          gunEff.remainder -= 1;
+          console.log(`You have ${gunEff.remainder} bullets left.`);
+        }
+
+        if (gunEff.remainder === 0) {
+          console.log(`No bullets left, reload now!`);
+        }
+      }
+
+      // Reload function
+      function reload() {
+        gunEff.shot = 0;
+        gunEff.remainder = gunEff.rounds;
+        console.log("Reloaded, you have 35 bullets.");
+      }
+    </script>
+  </body>
+</html>
